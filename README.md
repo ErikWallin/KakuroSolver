@@ -90,7 +90,7 @@ Eclipse project files could be generated
 </pre>
 To run an own puzzle
 <pre>
-> run /path/to/KakuroSolver20/scripts/body.json
+> run /path/to/KakuroSolver/scripts/body.json
 </pre>
 
 ### Run the REST api
@@ -100,11 +100,11 @@ To run an own puzzle
 </pre>
 You can now use the REST api with for example curl. Open another terminal and test the api.
 <pre>
-$ /path/to/KakuroSolver20/scripts/curl_test.sh
+$ /path/to/KakuroSolver/scripts/curl_test.sh
 </pre>
 You might need to chmod it first
 <pre>
-$ chmod +x /path/to/KakuroSolver20/scripts/curl_test.sh 
+$ chmod +x /path/to/KakuroSolver/scripts/curl_test.sh 
 </pre>
 
 ## Future improvements
