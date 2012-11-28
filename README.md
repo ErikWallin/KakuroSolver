@@ -71,10 +71,14 @@ These instructions are for MacOS, but should work on any Linux OS as well.
 
 ### Build and test
 <pre>
-$ git …
+$ git clone git@github.com:ErikWallin/KakuroSolver.git
 $ sbt
 > compile
 > test
+</pre>
+Eclipse project files could be generated
+<pre>
+> eclipse
 </pre>
 
 ### Run the Akka main program
@@ -100,6 +104,7 @@ You might need to chmod it first
 <pre>
 $ chmod +x /path/to/KakuroSolver20/scripts/curl_test.sh 
 </pre>
+
 ## Future improvements
 * The json handling seems to be much better in the future release of Play! Framework, but is currently not available.
 * Optimized Mailbox for WordActors. SquareUpdate messages should be prioritized before Reduce messages to avoid unneeded calculations and thus improve performance.
