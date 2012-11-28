@@ -46,6 +46,8 @@ The purpose of a REST api with json is often to separate frontend from backend. 
 ### Build system - sbt
 Although KakuroSolver consists of three sub projects, the sbt configuration is extremely simple and small. As much as possible of the settings has ben put in build.sbt instead of project/Build.scala.
 
+Version 0.12.1 was used.
+
 ### Test - specs2
 Specs2 is used for unit tests of domain classes.
 Scalatest with akka testkit is used for testing the actors classes.
