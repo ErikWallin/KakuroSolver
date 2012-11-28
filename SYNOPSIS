@@ -1,0 +1,17 @@
+KakuroSolver
+
+KakuroSolver is a program that solves a Kakuro puzzle. It is solved by a parallel elimination process, which is good for problems with no obvious mathematical solution. The actor model is well suited and Akka is thus central in the project. Together with scala, sbt and play mini gives KakuroSolver a good example for beginner/intermediate programmers that are interested in the Typesafe stack
+
+The solution is built with the following dependencies
+
+From Typesafe stack
+scala 2.9.2
+sbt
+akka-actor 2.0.4
+akka-testkit 2.0.4
+play-mini 2.0.3
+
+External dependencies
+specs2
+junit
+scalatest
