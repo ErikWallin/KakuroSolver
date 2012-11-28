@@ -103,3 +103,4 @@ $ chmod +x /path/to/KakuroSolver20/scripts/curl_test.sh
 ## Future improvements
 * The json handling seems to be much better in the future release of Play! Framework, but is currently not available.
 * Optimized Mailbox for WordActors. SquareUpdate messages should be prioritized before Reduce messages to avoid unneeded calculations and thus improve performance.
+
