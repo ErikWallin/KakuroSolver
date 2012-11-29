@@ -108,4 +108,5 @@ $ chmod +x /path/to/KakuroSolver/scripts/curl_test.sh
 </pre>
 
 ## Future improvements
-* The json handling seems to be much better in the future release of Play! Framework, but is currently not available.
+* The json handling seems to be much better in the future release of Play! Framework, but is currently not released.
+
