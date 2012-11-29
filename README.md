@@ -48,9 +48,9 @@ Although KakuroSolver consists of three sub projects, the sbt configuration is e
 
 Version 0.12.1 of sbt was used.
 
-### Test - specs2
+### Test
 Specs2 is used for unit tests of domain classes.
-Scalatest with akka testkit is used for testing the actors classes.
+Scalatest with Akka testkit is used for testing the actors classes.
 
 ### Dependencies
 Production dependencies
@@ -109,5 +109,3 @@ $ chmod +x /path/to/KakuroSolver/scripts/curl_test.sh
 
 ## Future improvements
 * The json handling seems to be much better in the future release of Play! Framework, but is currently not available.
-* Optimized Mailbox for <code>EntryActors</code>. <code>UpdateWhite</code> messages should be prioritized before <code>Reduce</code> messages to avoid unneeded calculations and thus improve performance.
-
