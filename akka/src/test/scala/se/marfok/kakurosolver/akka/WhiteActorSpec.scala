@@ -43,8 +43,6 @@ class WhiteActorSpec(_system: ActorSystem) extends TestKit(_system) with Implici
       assert(actor.subscribers.size === 0)
       actorRef ! Subscribe
       assert(actor.subscribers.size === 1)
-      actorRef ! Unsubscribe
-      assert(actor.subscribers.size === 0)
     }
   }
 

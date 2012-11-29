@@ -12,22 +12,20 @@ class WhiteActor(var white: White) extends Actor with ActorLogging {
 
   def receive = LoggingReceive {
     case Subscribe => subscribe(sender)
-    case Unsubscribe => unsubscribe(sender)
     case UpdateWhite(white) => updateWhite(white)
   }
   
   private def subscribe(sender: ActorRef) {
     subscribers = subscribers + sender
   }
-
-  private def unsubscribe(sender: ActorRef) {
-    subscribers = subscribers - sender
-  }
   
   private def updateWhite(that: White) {
     white = white.intersect(that)
     subscribers.filterNot(_ == sender).foreach(_ ! WhiteUpdate(white))
-    if (white.isCalculated) context.parent ! WhiteSolved(white)
+    if (white.isCalculated) {
+      context.parent ! WhiteSolved(white)
+      context.stop(self)
+    }
   }
 }
 

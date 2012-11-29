@@ -31,7 +31,6 @@ class EntryActor(var entry: Entry) extends Actor with ActorLogging {
     entry = entry.reduce
     val changedwhites = entry.whites.filter(w => w.availableNumbers.size < oldwhites.find(os => os.x == w.x && os.y == w.y).get.availableNumbers.size)
     changedwhites.foreach(w => context.actorFor("../" + WhiteActor.getName(w)) ! UpdateWhite(w))
-    entry.whites.filter(_.isCalculated).foreach(s => context.actorFor("../" + WhiteActor.getName(s)) ! Unsubscribe)
     if (entry.isCalculated) {
       context.parent ! EntrySolved(entry)
       context.stop(self)
