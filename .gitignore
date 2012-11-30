@@ -2,9 +2,12 @@ project/target/
 
 target/
 logs/
+akka/bin
 
 .classpath
 .project
 .cache
 .settings
+
+RUNNING_PID
 

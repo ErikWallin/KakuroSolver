@@ -26,7 +26,7 @@ class PuzzleActor(var puzzle: Puzzle) extends Actor with ActorLogging {
   def solve(starter: ActorRef): Unit = {
     this.starter = starter
     val whites = puzzle.whites.map(w => context.actorOf(Props(new WhiteActor(w)), WhiteActor.getName(w)))
-    val entries = puzzle.entries.map(e => context.actorOf(Props(new EntryActor(e)).withDispatcher("akka.actor.entry-dispatcher"), EntryActor.getName(e)))
+    val entries = puzzle.entries.map(e => context.actorOf(Props(new EntryActor(e)), EntryActor.getName(e)))
     children = entries.toSet ++ whites.toSet
     entries.foreach(_ ! Reduce)
   }

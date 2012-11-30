@@ -7,7 +7,7 @@ import se.marfok.kakurosolver.domain.White
 import akka.event.LoggingReceive
 
 /**
- * Actor for an entry, one actor per entry. 
+ * Actor for an entry, one actor per entry.
  */
 class EntryActor(var entry: Entry) extends Actor with ActorLogging {
 
@@ -21,19 +21,23 @@ class EntryActor(var entry: Entry) extends Actor with ActorLogging {
   }
 
   private def whiteUpdate(white: White): Unit = {
+    val oldEntry = entry
     entry = entry.whiteUpdate(white)
-    if (entry.isCalculated) context.parent ! EntrySolved(entry)
-    else self ! Reduce
+    if (oldEntry != entry) {
+      if (entry.isCalculated) context.parent ! EntrySolved(entry)
+      else self ! Reduce
+    }
   }
 
   private def reduce: Unit = {
-    val oldwhites = entry.whites
+    val oldEntry = entry
     entry = entry.reduce
-    val changedwhites = entry.whites.filter(w => w.availableNumbers.size < oldwhites.find(os => os.x == w.x && os.y == w.y).get.availableNumbers.size)
-    changedwhites.foreach(w => context.actorFor("../" + WhiteActor.getName(w)) ! UpdateWhite(w))
-    if (entry.isCalculated) {
-      context.parent ! EntrySolved(entry)
-      context.stop(self)
+    if (oldEntry != entry) {
+      val changedwhites = entry.whites.filter(w => w.availableNumbers.size < oldEntry.whites.find(os => os.x == w.x && os.y == w.y).get.availableNumbers.size)
+      changedwhites.foreach(w => context.actorFor("../" + WhiteActor.getName(w)) ! UpdateWhite(w))
+      if (entry.isCalculated) {
+        context.parent ! EntrySolved(entry)
+      }
     }
   }
 }
