@@ -109,5 +109,5 @@ $ chmod +x /path/to/KakuroSolver/scripts/curl_test.sh
 
 ## Future improvements
 * The json handling seems to be much better in the future release of Play! Framework, but is currently not released.
-* Optimized Mailbox for <code>EntryActors</code>. <code>WhiteUpdate</code> messages should be prioritized before <code>Reduce</code> messages to avoid unneeded calculations and thus improve performance. Duplicates of <Reduce> messages should also be removed.
+* Optimized Mailbox for <code>EntryActors</code>. <code>WhiteUpdate</code> messages should be prioritized before <code>Reduce</code> messages to avoid unneeded calculations and thus improve performance. Duplicates of <code>Reduce</code> messages should also be removed.
 
