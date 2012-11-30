@@ -13,7 +13,7 @@ The goal of this project is to solve the Kakuro. There exists no easy mathematic
 
 Example
 *******
-If an entry has the the sum 8 and consists of 3 whites, one can easily figure out that the numbers 6-9 can't be in the whites. Other entries that contain the same whites will then be informed and could remove other numbers from the whites until the Kakuro is finally solved.
+If an entry has the the sum 8 and consists of 3 whites, one can easily figure out that the numbers 6-9 can't be in the whites. Other entries that contain the same whites will then be informed and could remove other numbers from the whites until the Kakuro is finally solved.::
 
     |  X  |17\  | 3\  | 
     |  \12|     |     |
@@ -99,7 +99,7 @@ Run the Akka main program
     > project kakurosolver-akka
     > run
 
-To run an own puzzle::
+It is possible to specify your own puzzle.
 
     > run /path/to/KakuroSolver/scripts/body.json
 
