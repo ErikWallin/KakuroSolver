@@ -13,7 +13,7 @@ The goal of this project is to solve the Kakuro. There exists no easy mathematic
 
 Example
 *******
-If an entry has the the sum 8 and consists of 3 whites, one can easily figure out that the numbers 6-9 can't be in the whites. Other entries that contain the same whites will then be informed and could remove other numbers from the whites until the Kakuro is finally solved.::
+If an entry has the the sum 8 and consists of 3 whites, one can easily figure out that the numbers 6-9 can't be in the whites. Other entries that contain the same whites will then be informed and could remove other numbers from the whites until the Kakuro is finally solved.
 
     |  X  |17\  | 3\  | 
     |  \12|     |     |
@@ -82,21 +82,19 @@ These instructions are for MacOS, but should work on any Linux OS as well.
 
 Build and test
 **************
-::
 
     $ git clone git@github.com:ErikWallin/KakuroSolver.git
     $ sbt
     > compile
     > test
 
-Eclipse project files could be generated::
+Eclipse project files could be generated.
 
     > eclipse
 
 
 Run the Akka main program
 *************************
-::
 
     > project kakurosolver-akka
     > run
@@ -107,16 +105,15 @@ To run an own puzzle::
 
 Run the REST api
 ****************
-::
 
     > project kakurosolver-rest
     > run
 
-You can now use the REST api with for example curl. Open another terminal and test the api.::
+You can now use the REST api with for example curl. Open another terminal and test the api.
 
     $ /path/to/KakuroSolver/scripts/curl_test.sh
 
-You might need to chmod it first::
+You might need to chmod it first.
 
     $ chmod +x /path/to/KakuroSolver/scripts/curl_test.sh 
 
